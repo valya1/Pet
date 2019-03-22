@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+            android:id="@+id/dog"
+            android:title="Dog"
+            android:icon="@drawable/ic_launcher_foreground"/>
+    <item
+            android:id="@+id/cat"
+            android:title="Cat"
+            android:icon="@drawable/ic_launcher_foreground"/>
+
+    <item
+            android:id="@+id/car"
+            android:title="Car"/>
+
+    <item android:id="@+id/sport"
+          android:title="Sport"/>
+
+    <item android:id="@+id/games"
+          android:title="Games"/>
+
+</menu>
