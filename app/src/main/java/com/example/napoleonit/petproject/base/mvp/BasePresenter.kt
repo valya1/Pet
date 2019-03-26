@@ -1,4 +1,4 @@
-package com.example.napoleonit.petproject.base
+package com.example.napoleonit.petproject.base.mvp
 
 import com.arellomobile.mvp.MvpPresenter
 import com.arellomobile.mvp.MvpView

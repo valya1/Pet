@@ -1,9 +1,9 @@
 package com.example.napoleonit.petproject.tabs.dog
 
-import androidx.fragment.app.Fragment
-import ru.terrakok.cicerone.android.support.SupportAppScreen
+import com.example.napoleonit.petproject.tabs.base.TabScreen
 
-class DogScreen: SupportAppScreen() {
+class DogScreen : TabScreen() {
 
-    override fun getFragment(): Fragment = DogTabContainer()
+    override val container = DogTabContainer()
+
 }

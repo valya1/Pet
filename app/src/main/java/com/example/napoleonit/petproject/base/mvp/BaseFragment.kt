@@ -1,4 +1,4 @@
-package com.example.napoleonit.petproject.base
+package com.example.napoleonit.petproject.base.mvp
 
 import android.content.Context
 import android.os.Bundle
@@ -6,22 +6,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
-import androidx.fragment.app.Fragment
 import com.arellomobile.mvp.MvpAppCompatFragment
-import dagger.android.DispatchingAndroidInjector
 import dagger.android.support.AndroidSupportInjection
-import dagger.android.support.HasSupportFragmentInjector
-import javax.inject.Inject
 
-abstract class BaseFragment : MvpAppCompatFragment(), HasSupportFragmentInjector {
-
-    @Inject
-    lateinit var injector: DispatchingAndroidInjector<Fragment>
+abstract class BaseFragment : MvpAppCompatFragment(){
 
     @LayoutRes
     open fun getLayoutId(): Int? = null
-
-    override fun supportFragmentInjector() = injector
 
     override fun onAttach(context: Context?) {
 
