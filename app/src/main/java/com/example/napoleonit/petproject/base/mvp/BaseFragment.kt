@@ -9,10 +9,10 @@ import androidx.annotation.LayoutRes
 import com.arellomobile.mvp.MvpAppCompatFragment
 import dagger.android.support.AndroidSupportInjection
 
-abstract class BaseFragment : MvpAppCompatFragment(){
+abstract class BaseFragment : MvpAppCompatFragment() {
 
     @LayoutRes
-    open fun getLayoutId(): Int? = null
+    abstract fun getLayoutId(): Int
 
     override fun onAttach(context: Context?) {
 
@@ -22,6 +22,6 @@ abstract class BaseFragment : MvpAppCompatFragment(){
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
-        return getLayoutId()?.run { inflater.inflate(this, container, false) }
+        return getLayoutId().run { inflater.inflate(this, container, false) }
     }
 }

@@ -1,12 +1,21 @@
 package com.example.napoleonit.petproject.root
 
+import android.animation.Animator
+import android.animation.AnimatorListenerAdapter
+import android.animation.ValueAnimator
+import android.graphics.BitmapFactory
+import android.graphics.drawable.BitmapDrawable
+import android.graphics.drawable.Drawable
 import android.os.Bundle
+import androidx.core.content.res.ResourcesCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.arellomobile.mvp.MvpAppCompatActivity
 import com.arellomobile.mvp.presenter.InjectPresenter
 import com.arellomobile.mvp.presenter.ProvidePresenter
+import com.bumptech.glide.Glide
 import com.example.napoleonit.petproject.R
+import com.example.napoleonit.petproject.tabs.cat.CatScreen
 import com.example.napoleonit.petproject.tabs.dog.DogScreen
 import dagger.Lazy
 import dagger.android.AndroidInjection
@@ -71,13 +80,12 @@ class RootActivity : MvpAppCompatActivity(), RootView {
     override fun onCreate(savedInstanceState: Bundle?) {
 
         AndroidInjection.inject(this)
-
         super.onCreate(savedInstanceState)
-
         setContentView(R.layout.main_layout)
 
-        rootPresenter.goTo(DogScreen())
+//        rootPresenter.goTo(DogScreen())
 
+//        createNavigationHolderDialogFragment()
 
         bottomNavigationView.setOnNavigationItemReselectedListener { menuItem ->
             when (menuItem.itemId) {
@@ -85,10 +93,19 @@ class RootActivity : MvpAppCompatActivity(), RootView {
                     rootPresenter.goTo(DogScreen())
                 }
                 R.id.cat -> {
-                    //todo протестить
+                    rootPresenter.goTo(CatScreen())
                 }
             }
         }
+
+
+
+//        floatActionButton.setImagesFloatingAnimation(
+//            listOf(
+//                { ResourcesCompat.getDrawable(resources, R.drawable.gift, null) },
+//                { ResourcesCompat.getDrawable(resources, R.drawable.lab_puppy_hero, null) }
+//            )
+
     }
 
 
@@ -102,4 +119,12 @@ class RootActivity : MvpAppCompatActivity(), RootView {
         super.onPause()
         navigationHolder.removeNavigator()
     }
+
+
+//    fun createNavigationHolderDialogFragment() {
+//
+//
+//        TestContainerDialogFragment().show(supportFragmentManager, "test")
+//
+//    }
 }

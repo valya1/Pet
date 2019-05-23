@@ -1,4 +1,4 @@
-package com.example.napoleonit.petproject.screens
+package com.example.napoleonit.petproject.screens.labrador
 
 import com.arellomobile.mvp.MvpView
 

@@ -27,6 +27,7 @@ abstract class TabContainer : BaseFragment(), RouterProvider {
 
     override fun getLayoutId() = R.layout.tab_contianer
 
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
@@ -37,6 +38,7 @@ abstract class TabContainer : BaseFragment(), RouterProvider {
         super.onResume()
 
         tabId.toCicerone().navigatorHolder.setNavigator(navigator)
+
     }
 
     override fun onPause() {
